@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ImportacaoGPX": {
+      "commandName": "Project",
+      "commandLineArgs": "E:\\treino\\C#\\ImportacaoGPX\\activity_3906062110.gpx"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.deps.json
+E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.runtimeconfig.json
+E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.runtimeconfig.dev.json
+E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.dll
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.csprojAssemblyReference.cache
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.csproj.CoreCompileInputs.cache
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfoInputs.cache
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfo.cs
+E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.pdb
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.dll
+E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.pdb
