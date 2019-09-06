@@ -4,6 +4,7 @@ using System.Xml;
 using System.IO;
 using System.Linq;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace ImportacaoGPX
 {
@@ -52,7 +53,7 @@ namespace ImportacaoGPX
         {
             if (File.Exists(arquivo))
             {
-                Stopwatch TImportacao = new  Stopwatch();
+                Stopwatch TImportacao = new Stopwatch();
                 TImportacao.Start();
                 FileInfo fi = new FileInfo(arquivo);
                 Corrida corrida;
@@ -79,11 +80,21 @@ namespace ImportacaoGPX
         {
             using (var db = new DB())
             {
-                
+
                 if (db.Corrida.Where(predicate => predicate.Inicio == corrida.Inicio).Count() == 0)
                 {
+                    corrida.Tracks = corrida.Tracks.OrderBy(p => p.Hora).ToList();
                     db.Add(corrida);
+
+                    // db.Entry(corrida).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    // db.SaveChanges();
+                    // foreach (Track track in corrida.Tracks)
+                    // {
+                    //     track.IdCorrida = corrida.Id;
+                    //     db.Entry(track).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    // }
                     db.SaveChanges();
+
                 }
                 else
                 {
@@ -101,10 +112,12 @@ namespace ImportacaoGPX
             corrida.Tracks = new List<Track>();
             corrida.Inicio = DateTime.Parse(Meta["time"].InnerText);
             XmlNodeList trks = doc.GetElementsByTagName("trkpt");
-
+            int ct = 0;
             foreach (XmlNode ponto in trks)
             {
+                ct++;
                 Track track = new Track();
+                track.Id = ct;
                 track.lat = float.Parse(ponto.Attributes["lat"].Value);
                 track.lon = float.Parse(ponto.Attributes["lon"].Value);
                 track.Elevacao = float.Parse(ponto["ele"].InnerText);
@@ -126,23 +139,42 @@ namespace ImportacaoGPX
             XmlNode Root = doc.DocumentElement;
             corrida.Inicio = DateTime.Parse(Root["Activities"]["Activity"]["Id"].InnerText);
             XmlNodeList trks = doc.GetElementsByTagName("Trackpoint");
+            int ct = 0;
             foreach (XmlNode ponto in trks)
             {
+                ct++;
                 Track track = new Track();
+                track.Id = ct;
                 if (ponto["Position"] != null)
                 {
-                    track.lat = float.Parse(ponto["Position"]["LatitudeDegrees"].InnerText);
-                    track.lon = float.Parse(ponto["Position"]["LongitudeDegrees"].InnerText);
+                    if (float.TryParse(ponto["Position"]["LatitudeDegrees"].InnerText, NumberStyles.Any, new CultureInfo("en-US"), out float lat))
+                    {
+                        track.lat = lat;
+                    }
+
+                    if (float.TryParse(ponto["Position"]["LongitudeDegrees"].InnerText, NumberStyles.Any, new CultureInfo("en-US"), out float lon))
+                    {
+                        track.lon = lon;
+                    }
+
 
                 }
                 if (ponto["AltitudeMeters"] != null)
                 {
-                    track.Elevacao = float.Parse(ponto["AltitudeMeters"].InnerText);
+                    if (float.TryParse(ponto["AltitudeMeters"].InnerText, NumberStyles.Any, new CultureInfo("en-US"), out float altidute))
+                    {
+                        track.Elevacao = altidute;
+                    }
                 }
 
                 track.Hora = DateTime.Parse(ponto["Time"].InnerText);
                 track.Batimento = int.Parse(ponto["HeartRateBpm"]["Value"].InnerText);
                 track.CadenciaPasso = int.Parse(ponto["Extensions"]["ns3:TPX"]["ns3:RunCadence"].InnerText);
+                //track.Distancia = decimal.Parse(ponto["DistanceMeters"].InnerText);
+                if (decimal.TryParse(ponto["DistanceMeters"].InnerText, NumberStyles.Any, new CultureInfo("en-US"), out decimal distancia))
+                {
+                    track.Distancia = distancia;
+                }
                 corrida.Tracks.Add(track);
             }
 

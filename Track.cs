@@ -19,6 +19,7 @@ namespace ImportacaoGPX
         public int? CadenciaPasso { get; set; }
         public float? lat { get; set; }
         public float? lon { get; set; }
+        public decimal? Distancia {get;set;}
 
         [ForeignKey("IdCorrida")]
         public Corrida Corrida { get; set; }
