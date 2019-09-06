@@ -79,17 +79,11 @@ namespace ImportacaoGPX
         {
             using (var db = new DB())
             {
+                
                 if (db.Corrida.Where(predicate => predicate.Inicio == corrida.Inicio).Count() == 0)
                 {
-                    db.Entry(corrida).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    db.Add(corrida);
                     db.SaveChanges();
-                    foreach (Track track in corrida.Tracks)
-                    {
-                        track.IdCorrida = corrida.Id;
-                        db.Entry(track).State = Microsoft.EntityFrameworkCore.EntityState.Added;
-                    }
-                    db.SaveChanges();
-
                 }
                 else
                 {

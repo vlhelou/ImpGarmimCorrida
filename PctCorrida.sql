@@ -1,3 +1,5 @@
+use Corrida
+go
 declare @corte int = 75
 select 
 	Corrida.Id,
@@ -11,4 +13,4 @@ from Corrida
 group by
 	Corrida.Id,
 	Corrida.Inicio
-	
+order by Inicio desc
