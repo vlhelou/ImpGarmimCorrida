@@ -9,3 +9,14 @@ E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfo.cs
 E:\treino\C#\ImportacaoGPX\bin\Debug\netcoreapp2.2\ImportacaoGPX.pdb
 E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.dll
 E:\treino\C#\ImportacaoGPX\obj\Debug\netcoreapp2.2\ImportacaoGPX.pdb
+D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.deps.json
+D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.runtimeconfig.json
+D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.runtimeconfig.dev.json
+D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.dll
+D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.pdb
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.csprojAssemblyReference.cache
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.csproj.CoreCompileInputs.cache
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfoInputs.cache
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfo.cs
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.dll
+D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.pdb

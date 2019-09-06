@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
+using System.Linq;
+using System.Diagnostics;
 
 namespace ImportacaoGPX
 {
@@ -9,32 +11,90 @@ namespace ImportacaoGPX
     {
         static void Main(string[] args)
         {
-            FileInfo fi = new FileInfo(args[0]);
-            Corrida corrida;
-            if (fi.Extension.ToLower() == ".gpx")
+            if (args.Length != 1)
             {
-                corrida = ImportaGPX(fi);
+                Console.WriteLine("quantidade de paramametros errado");
+                return;
+            }
+            Stopwatch tempo = new Stopwatch();
+            tempo.Start();
+            if (Directory.Exists(args[0]))
+            {
+
+                List<String> Lista = new List<string>();
+                foreach (string arquivo in Directory.GetFiles(args[0], "*.tcx", SearchOption.TopDirectoryOnly))
+                {
+                    Lista.Add(arquivo);
+                }
+                foreach (string arquivo in Directory.GetFiles(args[0], "*.gpx", SearchOption.TopDirectoryOnly))
+                {
+                    Lista.Add(arquivo);
+                }
+
+                foreach (string arquivo in Lista)
+                {
+                    ImportaArquivo(arquivo);
+                }
+            }
+            else if (File.Exists(args[0]))
+            {
+                ImportaArquivo(args[0]);
             }
             else
             {
-                corrida = ImportaTCX(fi);
+                Console.WriteLine("Não existe nem diretório e nem arquivo");
             }
-            Grava(corrida);
-            Console.WriteLine("fim");
+            tempo.Stop();
+            Console.WriteLine($"fim em {tempo.Elapsed.ToString()}");
+        }
+
+        static void ImportaArquivo(string arquivo)
+        {
+            if (File.Exists(arquivo))
+            {
+                Stopwatch TImportacao = new  Stopwatch();
+                TImportacao.Start();
+                FileInfo fi = new FileInfo(arquivo);
+                Corrida corrida;
+                if (fi.Extension.ToLower() == ".gpx")
+                {
+                    corrida = ImportaGPX(fi);
+                }
+                else
+                {
+                    corrida = ImportaTCX(fi);
+                }
+                Grava(corrida);
+                TImportacao.Stop();
+                Console.WriteLine($"a corrida de inicio:{corrida.Inicio} foi importada em: {TImportacao.Elapsed.ToString()}");
+            }
+            else
+            {
+                Console.WriteLine($"O arquivo:{arquivo} não existe");
+            }
+
         }
 
         static void Grava(Corrida corrida)
         {
             using (var db = new DB())
             {
-                db.Entry(corrida).State = Microsoft.EntityFrameworkCore.EntityState.Added;
-                db.SaveChanges();
-                foreach (Track track in corrida.Tracks)
+                if (db.Corrida.Where(predicate => predicate.Inicio == corrida.Inicio).Count() == 0)
                 {
-                    track.IdCorrida = corrida.Id;
-                    db.Entry(track).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    db.Entry(corrida).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    db.SaveChanges();
+                    foreach (Track track in corrida.Tracks)
+                    {
+                        track.IdCorrida = corrida.Id;
+                        db.Entry(track).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                    }
+                    db.SaveChanges();
+
                 }
-                db.SaveChanges();
+                else
+                {
+                    Console.WriteLine("Arquivo já importado");
+                }
             }
         }
         static Corrida ImportaGPX(FileInfo arquivo)

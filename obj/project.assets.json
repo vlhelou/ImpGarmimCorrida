@@ -3473,11 +3473,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\treino\\C#\\ImportacaoGPX\\ImportacaoGPX.csproj",
+      "projectUniqueName": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
       "projectName": "ImportacaoGPX",
-      "projectPath": "E:\\treino\\C#\\ImportacaoGPX\\ImportacaoGPX.csproj",
+      "projectPath": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
       "packagesPath": "C:\\Users\\vlhel\\.nuget\\packages\\",
-      "outputPath": "E:\\treino\\C#\\ImportacaoGPX\\obj\\",
+      "outputPath": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
