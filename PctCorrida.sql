@@ -1,15 +1,36 @@
 use Corrida
 go
-declare @corte int = 75
+
+declare @corte int = 75;
+
+with difDistancia (IdCorrida, Id, Hora, Elevacao, Batimento, CadenciaPasso, lat, lon, Distancia, Percorrido) as (
+	select 
+		Track.IdCorrida
+		,Track.Id
+		, Track.Hora
+		, Track.Elevacao
+		, Track.Batimento
+		, Track.CadenciaPasso
+		, Track.lat
+		, Track.lon
+		, Track.Distancia
+		, Proximo.Distancia - Track.Distancia as Percorrido
+	from Track
+		join Track as Proximo on 
+			Track.IdCorrida = Proximo.IdCorrida and Proximo.Id = Track.Id+1
+)
+
+
 select 
 	Corrida.Id,
 	Corrida.Inicio,
-	sum(case when Track.CadenciaPasso>=@corte then 1 else 0 end) Corrida,
-	sum(case when Track.CadenciaPasso<@corte then 1 else 0 end) Caminha,
-	count(1) Total,
-	convert(money, sum(case when Track.CadenciaPasso>=@corte then 1 else 0 end) )/count(1)*100 as PctCorrida
+	format(sum(case when difDistancia.CadenciaPasso>=@corte then Percorrido else 0 end),'N2') Corrida,
+	format(sum(case when difDistancia.CadenciaPasso<@corte then Percorrido else 0 end),'N2') Caminha,
+	count(1) TotalRegistros,
+	format(sum(Percorrido),'N2') TotalPercorrido,
+	convert(money, sum(case when difDistancia.CadenciaPasso>=@corte then Percorrido else 0 end) )/sum(Percorrido)*100 as PctCorrida
 from Corrida
-	inner join Track on Corrida.Id = Track.IdCorrida
+	join difDistancia on Corrida.Id = difDistancia.IdCorrida
 group by
 	Corrida.Id,
 	Corrida.Inicio
