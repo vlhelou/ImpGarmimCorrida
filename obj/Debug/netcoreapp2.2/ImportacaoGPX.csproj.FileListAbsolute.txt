@@ -15,7 +15,6 @@ D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.runtime
 D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.dll
 D:\GitHub\vlhelou\ImpGarmimCorrida\bin\Debug\netcoreapp2.2\ImportacaoGPX.pdb
 D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.csprojAssemblyReference.cache
-D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.csproj.CoreCompileInputs.cache
 D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfoInputs.cache
 D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.AssemblyInfo.cs
 D:\GitHub\vlhelou\ImpGarmimCorrida\obj\Debug\netcoreapp2.2\ImportacaoGPX.dll

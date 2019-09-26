@@ -6,6 +6,7 @@ using System.Linq;
 using System.Diagnostics;
 using System.Globalization;
 
+
 namespace ImportacaoGPX
 {
     class Program

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {}
+    "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {
+    "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
+        "projectUniqueName": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
         "projectName": "ImportacaoGPX",
-        "projectPath": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
+        "projectPath": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
         "packagesPath": "C:\\Users\\vlhel\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\vlhelou\\ImpGarmimCorrida\\obj\\",
+        "outputPath": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -23,14 +23,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp3.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp3.0": {
             "projectReferences": {}
           }
         },
@@ -41,21 +41,19 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp3.0": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.6, )"
+              "version": "[3.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.6, )"
+              "version": "[3.0.0, )"
             },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
+            "System.IO": {
               "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -67,7 +65,13 @@
             "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
