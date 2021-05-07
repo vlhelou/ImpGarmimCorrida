@@ -1,36 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {}
+    "D:\\Fontes\\Git\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {}
   },
   "projects": {
-    "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {
+    "D:\\Fontes\\Git\\ImpGarmimCorrida\\ImportacaoGPX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
+        "projectUniqueName": "D:\\Fontes\\Git\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
         "projectName": "ImportacaoGPX",
-        "projectPath": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
+        "projectPath": "D:\\Fontes\\Git\\ImpGarmimCorrida\\ImportacaoGPX.csproj",
         "packagesPath": "C:\\Users\\vlhel\\.nuget\\packages\\",
-        "outputPath": "d:\\GitHub\\vlhelou\\ImpGarmimCorrida\\obj\\",
+        "outputPath": "D:\\Fontes\\Git\\ImpGarmimCorrida\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\vlhel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -41,15 +41,16 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[5.0.5, )"
             },
             "System.IO": {
               "target": "Package",
@@ -71,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
